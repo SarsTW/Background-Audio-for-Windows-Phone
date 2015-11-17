@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="320c241d-4e4a-4ff2-ab5a-5e10f620888e" Version="1.0.0.10" Publisher="CN=prasen" />
-  <mp:PhoneIdentity PhoneProductId="320c241d-4e4a-4ff2-ab5a-5e10f620888e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="de5e1759-6e1c-4581-9931-58b031b42abb" Version="1.0.0.0" Publisher="CN=wenpe" />
+  <mp:PhoneIdentity PhoneProductId="de5e1759-6e1c-4581-9931-58b031b42abb" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>BackgroundAudioPlayerJS</DisplayName>
-    <PublisherDisplayName>prasen</PublisherDisplayName>
-    <Logo>images\storelogo_100.png</Logo>
+    <PublisherDisplayName>wenpe</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
   </Properties>
-  <Prerequisites>
-    <OSMinVersion>6.3.1</OSMinVersion>
-    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
-  </Prerequisites>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
+      <uap:VisualElements DisplayName="BackgroundAudioPlayerJS" Description="BackgroundAudioPlayerJS" BackgroundColor="#464646" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="images\splashscreen.png" />
+      </uap:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="SampleBackgroundAudioTask.MyBackgroundAudioTask">
           <BackgroundTasks>
@@ -23,14 +27,10 @@
           </BackgroundTasks>
         </Extension>
       </Extensions>
-      <m3:VisualElements DisplayName="BackgroundAudioPlayerJS" Description="BackgroundAudioPlayerJS" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="images\Logo.png" Square44x44Logo="images\Logo_44.png" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest">
-        <m3:DefaultTile Square71x71Logo="images\square71x71logo.png">
-        </m3:DefaultTile>
-      </m3:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
-    <Capability Name="musicLibrary" />
+    <uap:Capability Name="musicLibrary" />
   </Capabilities>
 </Package>
